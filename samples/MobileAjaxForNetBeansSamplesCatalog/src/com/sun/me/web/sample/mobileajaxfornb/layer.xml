@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Templates">
+        <folder name="Project">
+            <folder name="Samples">
+                <folder name="J2ME">
+                    <file name="MobileAjaxSamplesProject.zip" url="MobileAjaxSamplesProject.zip">
+                        <attr name="SystemFileSystem.localizingBundle" stringvalue="com.sun.me.web.sample.mobileajaxfornb.Bundle"/>
+                        <attr name="instantiatingIterator" methodvalue="com.sun.me.web.sample.mobileajaxfornb.MobileAjaxWizardIterator.createIterator"/>
+                        <attr name="instantiatingWizardURL" urlvalue="nbresloc:/com/sun/me/web/sample/mobileajaxfornb/MobileAjaxDescription.html"/>
+                        <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/netbeans/modules/kjava/examples/j2meProject.gif"/>
+                        <attr name="template" boolvalue="true"/>
+                    </file>
+                </folder>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,1 @@
+{"ResultSet":{"Result":"http:\/\/gws.maps.yahoo.com\/mapimage?MAPDATA=iVFFVOd6wXW0NaAaCBB4Ezj88LtJyY5IJTSBGXUISXmcAW5bI3YjOcbcqCDAIlVRDqp4HwsMVtyTMpC9BfbVFzO3.W3JH1Rz4NXEXhTUdX2y3em2MhSaf_3KLCCPBLZbwG5R2ERxyWtJA6aqQFsgfPU-&mvt=m?cltype=onnetwork&.intl=us"}}

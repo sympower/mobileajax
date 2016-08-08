@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.3">
+    <DesignDocument designVersion="MIDP-2" uidCounter="56">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice" uid="0"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint" uid="1">
+            <Property name="targetDisplayable" value="subscriptionsForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="subscriptionsForm" typeid="MIDP:javax.microedition.lcdui.Form" uid="6">
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+                <ContainerPropertyItem value="$CommandAction2"/>
+            </ContainerProperty>
+            <ContainerProperty name="items"/>
+        </DesignComponent>
+        <DesignComponent id="feedForm" typeid="MIDP:javax.microedition.lcdui.Form" uid="7">
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction4"/>
+                <ContainerPropertyItem value="$CommandAction9"/>
+            </ContainerProperty>
+            <ContainerProperty name="items"/>
+        </DesignComponent>
+        <DesignComponent id="entryForm" typeid="MIDP:javax.microedition.lcdui.Form" uid="8">
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction5"/>
+            </ContainerProperty>
+            <ContainerProperty name="items"/>
+        </DesignComponent>
+        <DesignComponent id="newEntryForm" typeid="MIDP:javax.microedition.lcdui.Form" uid="9">
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction7"/>
+                <ContainerPropertyItem value="$CommandAction8"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="titleField"/>
+                <ContainerPropertyItem value="contentField"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="exitCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="11">
+            <Property name="label" value="STRING:Exit"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="EXIT"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction" uid="12">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="exitCommand"/>
+            <Property name="actionOrigin" value="subscriptionsForm"/>
+        </DesignComponent>
+        <DesignComponent id="readCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="13">
+            <Property name="label" value="STRING:Read"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="OK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction" uid="14">
+            <Property name="targetDisplayable" value="readWaitScreen"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="readCommand"/>
+            <Property name="actionOrigin" value="subscriptionsForm"/>
+        </DesignComponent>
+        <DesignComponent id="readWaitScreen" typeid="MIDP-2:org.netbeans.microedition.lcdui.WaitScreen" uid="16">
+            <Property name="task" value="readCancellableTask"/>
+            <Property name="successCommandAction" value="$InternalCommandAction1"/>
+            <Property name="failureCommandAction" value="$InternalCommandAction2"/>
+            <Property name="failureAction"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="$InternalCommandAction1" typeid="MIDP:InternalCommandAction" uid="17">
+            <Property name="targetDisplayable" value="feedForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="readWaitScreen"/>
+            <Property name="actionOrigin" value="readWaitScreen"/>
+        </DesignComponent>
+        <DesignComponent id="$InternalCommandAction2" typeid="MIDP:InternalCommandAction" uid="18">
+            <Property name="targetDisplayable" value="updateWaitScreen"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="readWaitScreen"/>
+            <Property name="actionOrigin" value="readWaitScreen"/>
+        </DesignComponent>
+        <DesignComponent id="updateWaitScreen" typeid="MIDP-2:org.netbeans.microedition.lcdui.WaitScreen" uid="19">
+            <Property name="task" value="updateCancellableTask"/>
+            <Property name="successCommandAction" value="$InternalCommandAction3"/>
+            <Property name="failureCommandAction" value="$InternalCommandAction4"/>
+            <Property name="failureAction"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="$InternalCommandAction3" typeid="MIDP:InternalCommandAction" uid="20">
+            <Property name="targetDisplayable" value="feedForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="updateWaitScreen"/>
+            <Property name="actionOrigin" value="updateWaitScreen"/>
+        </DesignComponent>
+        <DesignComponent id="$InternalCommandAction4" typeid="MIDP:InternalCommandAction" uid="21">
+            <Property name="targetDisplayable" value="subscriptionsForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="updateWaitScreen"/>
+            <Property name="actionOrigin" value="updateWaitScreen"/>
+        </DesignComponent>
+        <DesignComponent id="errorAlert" typeid="MIDP:javax.microedition.lcdui.Alert" uid="22">
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction3"/>
+            </ContainerProperty>
+            <Property name="string" value="STRING:"/>
+            <Property name="timeout" value="2"/>
+            <Property name="image"/>
+        </DesignComponent>
+        <DesignComponent id="okCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="24">
+            <Property name="label" value="STRING:Ok"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="OK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction3" typeid="MIDP:CommandAction" uid="25">
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="okCommand"/>
+            <Property name="actionOrigin" value="errorAlert"/>
+        </DesignComponent>
+        <DesignComponent id="gotoCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="26">
+            <Property name="label" value="STRING:Go"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="selectCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="28">
+            <Property name="label" value="STRING:Select"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="OK"/>
+        </DesignComponent>
+        <DesignComponent id="titleField" typeid="MIDP:javax.microedition.lcdui.TextField" uid="30">
+            <Property name="label" value="STRING:Title"/>
+            <Property name="maxSize" value="120"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="contentField" typeid="MIDP:javax.microedition.lcdui.TextField" uid="32">
+            <Property name="label" value="STRING:Content"/>
+            <Property name="maxSize" value="4096"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="updateCancellableTask" typeid="MIDP-2:org.netbeans.microedition.util.SimpleCancellableTask" uid="33">
+            <Property name="runnableMethodBody" value="updateTask();"/>
+        </DesignComponent>
+        <DesignComponent id="readCancellableTask" typeid="MIDP-2:org.netbeans.microedition.util.SimpleCancellableTask" uid="34">
+            <Property name="runnableMethodBody" value="readTask();"/>
+        </DesignComponent>
+        <DesignComponent id="goWaitScreen" typeid="MIDP-2:org.netbeans.microedition.lcdui.WaitScreen" uid="35">
+            <Property name="task" value="goCancellableTask"/>
+            <Property name="successCommandAction" value="$InternalCommandAction5"/>
+            <Property name="failureCommandAction" value="$InternalCommandAction6"/>
+            <Property name="failureAction"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="$InternalCommandAction5" typeid="MIDP:InternalCommandAction" uid="36">
+            <Property name="targetDisplayable" value="entryForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="goWaitScreen"/>
+            <Property name="actionOrigin" value="goWaitScreen"/>
+        </DesignComponent>
+        <DesignComponent id="$InternalCommandAction6" typeid="MIDP:InternalCommandAction" uid="37">
+            <Property name="targetDisplayable" value="entryForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="goWaitScreen"/>
+            <Property name="actionOrigin" value="goWaitScreen"/>
+        </DesignComponent>
+        <DesignComponent id="goCancellableTask" typeid="MIDP-2:org.netbeans.microedition.util.SimpleCancellableTask" uid="38">
+            <Property name="runnableMethodBody" value="goTask();"/>
+        </DesignComponent>
+        <DesignComponent id="backCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="39">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction4" typeid="MIDP:CommandAction" uid="40">
+            <Property name="targetDisplayable" value="subscriptionsForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand"/>
+            <Property name="actionOrigin" value="feedForm"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction5" typeid="MIDP:CommandAction" uid="41">
+            <Property name="targetDisplayable" value="feedForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand"/>
+            <Property name="actionOrigin" value="entryForm"/>
+        </DesignComponent>
+        <DesignComponent id="newEntryCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="42">
+            <Property name="label" value="STRING:New"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction7" typeid="MIDP:CommandAction" uid="44">
+            <Property name="targetDisplayable" value="feedForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand"/>
+            <Property name="actionOrigin" value="newEntryForm"/>
+        </DesignComponent>
+        <DesignComponent id="postCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="45">
+            <Property name="label" value="STRING:Post"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction8" typeid="MIDP:CommandAction" uid="46">
+            <Property name="targetDisplayable" value="postWaitScreen"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="postCommand"/>
+            <Property name="actionOrigin" value="newEntryForm"/>
+        </DesignComponent>
+        <DesignComponent id="postWaitScreen" typeid="MIDP-2:org.netbeans.microedition.lcdui.WaitScreen" uid="47">
+            <Property name="task" value="postCancellableTask"/>
+            <Property name="successCommandAction" value="$InternalCommandAction7"/>
+            <Property name="failureCommandAction" value="$InternalCommandAction8"/>
+            <Property name="failureAction"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="$InternalCommandAction7" typeid="MIDP:InternalCommandAction" uid="48">
+            <Property name="targetDisplayable" value="feedForm"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="postWaitScreen"/>
+            <Property name="actionOrigin" value="postWaitScreen"/>
+        </DesignComponent>
+        <DesignComponent id="$InternalCommandAction8" typeid="MIDP:InternalCommandAction" uid="49">
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="postWaitScreen"/>
+            <Property name="actionOrigin" value="postWaitScreen"/>
+        </DesignComponent>
+        <DesignComponent id="postCancellableTask" typeid="MIDP-2:org.netbeans.microedition.util.SimpleCancellableTask" uid="50">
+            <Property name="runnableMethodBody" value="postTask();"/>
+        </DesignComponent>
+        <DesignComponent id="updateCommand" typeid="MIDP:javax.microedition.lcdui.Command" uid="51">
+            <Property name="label" value="STRING:Update"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction9" typeid="MIDP:CommandAction" uid="52">
+            <Property name="targetDisplayable" value="updateWaitScreen"/>
+            <Property name="targetForwardDisplayable" value="feedForm"/>
+            <Property name="actionSource" value="updateCommand"/>
+            <Property name="actionOrigin" value="feedForm"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.1">
+        <Node id="$MobileDevice" location="120,112" order=",$StartPoint,,,,,,,,,$ExitPoint,,,,,"/>
+        <Node id="subscriptionsForm" location="336,120" order="$CommandAction1,$CommandAction2,,,,,,,,,$Default,,,,,"/>
+        <Node id="feedForm" location="80,248" order="$CommandAction4,,$CommandAction9,,,,,,,,$Default,,,,,"/>
+        <Node id="entryForm" location="96,440" order="$CommandAction5,,,,,,,,,,$Default,,,,,"/>
+        <Node id="newEntryForm" location="280,440" order="$CommandAction7,$CommandAction8,,,,,,,,,$Default,,,,,"/>
+        <Node id="readWaitScreen" location="560,112" order="$InternalCommandAction2,$InternalCommandAction1,,,,,,,,,$Default,,,,,"/>
+        <Node id="updateWaitScreen" location="296,296" order="$InternalCommandAction3,$InternalCommandAction4,,,,,,,,,$Default,,,,,"/>
+        <Node id="errorAlert" location="552,272" order="$CommandAction3,,,,,,,,,,$Default,,,,,"/>
+        <Node id="goWaitScreen" location="96,576" order="$InternalCommandAction6,$InternalCommandAction5,,,,,,,,,$Default,,,,,"/>
+        <Node id="postWaitScreen" location="488,440" order="$InternalCommandAction7,$InternalCommandAction8,,,,,,,,,$Default,,,,,"/>
+        <Link id="$StartPoint$ActionLink" path="160,88,241,88,241,96,296,96"/>
+        <Link id="$CommandAction1$ActionLink" path="376,112,443,112,443,156,7,156,7,88,80,88"/>
+        <Link id="$CommandAction2$ActionLink" path="376,96,443,96,443,88,520,88"/>
+        <Link id="$InternalCommandAction1$ActionLink" path="600,88,676,88,676,168,16,168,16,224,40,224"/>
+        <Link id="$InternalCommandAction2$ActionLink" path="600,104,664,104,664,145,167,145,167,272,256,272"/>
+        <Link id="$InternalCommandAction3$ActionLink" path="336,288,419,288,419,168,16,168,16,224,40,224"/>
+        <Link id="$InternalCommandAction4$ActionLink" path="336,272,406,272,406,198,241,198,241,96,296,96"/>
+        <Link id="$InternalCommandAction5$ActionLink" path="136,552,202,552,202,486,30,486,30,416,56,416"/>
+        <Link id="$InternalCommandAction6$ActionLink" path="136,568,202,568,202,486,30,486,30,416,56,416"/>
+        <Link id="$CommandAction4$ActionLink" path="120,240,187,240,187,198,241,198,241,96,296,96"/>
+        <Link id="$CommandAction5$ActionLink" path="136,432,186,432,186,303,16,303,16,224,40,224"/>
+        <Link id="$CommandAction7$ActionLink" path="320,432,378,432,378,346,16,346,16,224,40,224"/>
+        <Link id="$CommandAction8$ActionLink" path="320,416,448,416"/>
+        <Link id="$InternalCommandAction7$ActionLink" path="528,432,594,432,594,346,16,346,16,224,40,224"/>
+        <Link id="$CommandAction9$ActionLink" path="120,208,176,208,176,272,256,272"/>
+    </FlowDocument>
+</MVDData>

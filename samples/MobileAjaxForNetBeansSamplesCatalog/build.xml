@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="com.sun.me.web.sample.mobileajaxfornb" default="netbeans" basedir=".">
+    <description>Builds, tests, and runs the project com.sun.me.web.sample.mobileajaxfornb.</description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <property name="zipFile" location="src/com/sun/me/web/sample/mobileajaxfornb/MobileAjaxSamplesProject.zip" />
+    <!-- <property name="ajax.sources.dir" value="../../../../../mobileajax" /> -->
+    
+    <target name="ajax.sources.exist" unless="ajax.sources.dir">
+        <available property="ajax.sources.dir" file="../../../mobileajax" type="dir" value="../../../mobileajax"/>
+    </target>
+    
+    <target name="zipMobileAjaxProjects" depends="ajax.sources.exist">        
+        <fail unless="ajax.sources.dir" message="There are missing sources of the MobileAjax. Please checkout them from https://meapplicationdevelopers.dev.java.net/mobileajax.html"/>
+        <delete file="${zipFile}" failonerror="false"/>
+        <zip destfile="${zipFile}" defaultexcludes="yes">
+            <fileset dir="${ajax.sources.dir}">
+                <include name="lib/**"/>
+                <include name="samples/midp/**"/>
+                <exclude name="**/private/**"/>
+                <exclude name="**/build/**"/>
+                <exclude name="**/dist/**"/>
+            </fileset>
+        </zip>
+    </target>
+    
+    <!-- replace the original init target -->
+    <target name="init" depends="basic-init,files-init,build-init, zipMobileAjaxProjects"/>
+
+</project>
