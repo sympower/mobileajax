@@ -61,4 +61,13 @@ public class StringWriter extends Writer {
 
     public void close() throws IOException {
     }
+
+    public StringBuffer getBuffer() {
+        return buf;
+    }
+
+    public String toString() {
+        return buf.toString();
+    }
+
 }
