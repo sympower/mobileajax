@@ -12,7 +12,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "pom.xml" }}
+            - dependencies-{{ checksum "lib/json/pom.xml" }}
             # Fallback to using the latest cache if no exact match is found
             - dependencies-
       - run:
@@ -23,7 +23,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.m2
-          key: dependencies-{{ checksum "pom.xml" }}
+          key: dependencies-{{ checksum "lib/json/pom.xml" }}
       - run:
           name: Build
           command: |
@@ -43,7 +43,7 @@ jobs:
           at: .
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "pom.xml" }}
+            - dependencies-{{ checksum "lib/json/pom.xml" }}
             # Fallback to using the latest cache if no exact match is found
             - dependencies-
       - run:
@@ -72,7 +72,7 @@ jobs:
           at: .
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "pom.xml" }}
+            - dependencies-{{ checksum "lib/json/pom.xml" }}
             # Fallback to using the latest cache if no exact match is found
             - dependencies-
       - add_ssh_keys:
