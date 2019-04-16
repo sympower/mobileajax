@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.java.meapplicationdevelopers</groupId>
     <artifactId>mobileajax-json</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -87,7 +87,7 @@
       <url>https://github.com/sympower/mobileajax</url>
       <connection>git@github.com:sympower/mobileajax.git</connection>
       <developerConnection>scm:git:git@github.com:sympower/mobileajax.git</developerConnection>
-      <tag>mobileajax-json-1.0.0</tag>
+      <tag>HEAD</tag>
     </scm>
 
 </project>
