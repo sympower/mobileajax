@@ -1,8 +1,8 @@
-package org.json.me.util;
+package net.sympower.json.me.util;
 
-import org.json.me.JSONException;
-import org.json.me.JSONObject;
-import org.json.me.JSONTokener;
+import net.sympower.json.me.JSONObject;
+import net.sympower.json.me.JSONException;
+import net.sympower.json.me.JSONTokener;
 
 /*
 Copyright (c) 2002 JSON.org

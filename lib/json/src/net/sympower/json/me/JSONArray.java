@@ -1,4 +1,4 @@
-package org.json.me;
+package net.sympower.json.me;
 
 /*
 Copyright (c) 2002 JSON.org
@@ -26,7 +26,6 @@ SOFTWARE.
 
 import java.io.IOException;
 import java.io.Writer;
-import java.util.Hashtable;
 import java.util.Vector;
 
 /**

@@ -1,4 +1,4 @@
-package org.json.me;
+package net.sympower.json.me;
 
 /*
 Copyright (c) 2002 JSON.org

@@ -1,9 +1,10 @@
-package org.json.me.util;
+package net.sympower.json.me.util;
 
 import java.util.Enumeration;
-import org.json.me.JSONArray;
-import org.json.me.JSONException;
-import org.json.me.JSONObject;
+
+import net.sympower.json.me.JSONArray;
+import net.sympower.json.me.JSONObject;
+import net.sympower.json.me.JSONException;
 
 /*
 Copyright (c) 2002 JSON.org
@@ -307,7 +308,7 @@ public class XML {
             throws JSONException {
         StringBuffer b = new StringBuffer();
         int          i;
-        JSONArray    ja;
+        JSONArray ja;
         JSONObject   jo;
         String       k;
         Enumeration  keys;

@@ -1,4 +1,4 @@
-package org.json.me;
+package net.sympower.json.me;
 
 import java.io.IOException;
 import java.io.Writer;
